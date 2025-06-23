@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # fin-assistant-miniapp
-Telegram MiniApp для управления финансовыми целями
-=======
+
+Telegram MiniApp для управления финансовыми целями.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -67,9 +67,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Follow these steps to create a production build and run it locally:
 
-### `npm run build` fails to minify
+1. Install dependencies
+   ```bash
+   npm install
+   ```
+2. Build the project
+   ```bash
+   npm run build
+   ```
+3. Serve the compiled app
+   ```bash
+   npx serve -s build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> e3de17c (Первый рабочий код для деплоя)
+The provided `Dockerfile` can also be used to build and run the application in a
+containerized environment:
+
+```bash
+docker build -t fin-assistant .
+docker run --rm -p 3000:3000 fin-assistant
+```
+
+Your application will be available on [http://localhost:3000](http://localhost:3000).
+
+When deploying for Telegram MiniApps, host the `build` folder publicly and specify the URL in your bot configuration.
